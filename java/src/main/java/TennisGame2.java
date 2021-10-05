@@ -25,25 +25,13 @@ public class TennisGame2 implements TennisGame
         
         if (p1point > 0 && p2point ==0)
         {
-            if (p1point ==1)
-                P1res = "Fifteen";
-            if (p1point ==2)
-                P1res = "Thirty";
-            if (p1point ==3)
-                P1res = "Forty";
-            
+            P1res = getScore(p1point);
             P2res = "Love";
             score = P1res + "-" + P2res;
         }
         if (p2point > 0 && p1point ==0)
         {
-            if (p2point ==1)
-                P2res = "Fifteen";
-            if (p2point ==2)
-                P2res = "Thirty";
-            if (p2point ==3)
-                P2res = "Forty";
-            
+            P2res = getScore(p2point);
             P1res = "Love";
             score = P1res + "-" + P2res;
         }
@@ -102,6 +90,8 @@ public class TennisGame2 implements TennisGame
             score = "Fifteen";
         if (point == 2)
             score = "Thirty";
+        if (point == 3)
+            score = "Forty";
         return score;
     }
 
