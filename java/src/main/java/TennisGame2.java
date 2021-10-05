@@ -34,16 +34,15 @@ public class TennisGame2 implements TennisGame
             score = formatScore();
         }
         
-        if (p1point > p2point && p2point >= 3)
+        if (p1point >= 3 && p2point >= 3 && p1point != p2point)
         {
-            score = "Advantage " + player1Name;
+            if (p1point > p2point) {
+                score = "Advantage " + player1Name;
+            } else {
+                score = "Advantage " + player2Name;
+            }
         }
-        
-        if (p2point > p1point && p1point >= 3)
-        {
-            score = "Advantage " + player2Name;
-        }
-        
+
         if (p1point >=4 && p2point >=0 && (p1point - p2point)>=2)
         {
             score = "Win for " + player1Name;
