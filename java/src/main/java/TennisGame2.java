@@ -30,26 +30,14 @@ public class TennisGame2 implements TennisGame
 
         if (p1point > p2point && p1point < 4 && p2point > 0)
         {
-            if (p1point ==2)
-                P1res="Thirty";
-            if (p1point ==3)
-                P1res="Forty";
-            if (p2point ==1)
-                P2res="Fifteen";
-            if (p2point ==2)
-                P2res="Thirty";
+            P1res = getScore(p1point);
+            P2res = getScore(p2point);
             score = P1res + "-" + P2res;
         }
         if (p2point > p1point && p2point < 4 && p1point > 0)
         {
-            if (p2point ==2)
-                P2res="Thirty";
-            if (p2point ==3)
-                P2res="Forty";
-            if (p1point ==1)
-                P1res="Fifteen";
-            if (p1point ==2)
-                P1res="Thirty";
+            P1res = getScore(p1point);
+            P2res = getScore(p2point);
             score = P1res + "-" + P2res;
         }
         
