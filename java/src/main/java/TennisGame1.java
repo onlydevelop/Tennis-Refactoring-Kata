@@ -5,6 +5,7 @@ public class TennisGame1 implements TennisGame {
     private int m_score2 = 0;
     private String player1Name;
     private String player2Name;
+    private final String[] scoreLabel = {"Love", "Fifteen", "Thirty", "Forty"};
 
     public TennisGame1(String player1Name, String player2Name) {
         this.player1Name = player1Name;
@@ -66,21 +67,9 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String getLeveledScore() {
-        String score;
-        switch (m_score1) {
-            case 0:
-                score = "Love-All";
-                break;
-            case 1:
-                score = "Fifteen-All";
-                break;
-            case 2:
-                score = "Thirty-All";
-                break;
-            default:
-                score = "Deuce";
-                break;
-
+        String score = "Deuce";
+        if (m_score1 < 3) {
+            score = scoreLabel[m_score1] + "-All";
         }
         return score;
     }
