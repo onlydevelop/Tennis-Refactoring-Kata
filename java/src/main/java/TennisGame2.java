@@ -100,18 +100,10 @@ public class TennisGame2 implements TennisGame
         return score;
     }
     
-    public void incrementP1Score(){
-        p1point++;
-    }
-    
-    public void incrementP2Score(){
-        p2point++;
-    }
-
     public void wonPoint(String player) {
         if (player == player1Name)
-            incrementP1Score();
+            p1point++;
         else
-            incrementP2Score();
+            p2point++;
     }
 }
