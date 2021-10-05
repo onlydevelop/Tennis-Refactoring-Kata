@@ -25,16 +25,16 @@ public class TennisGame2 implements TennisGame
         
         if ((p1point == 0 || p2point == 0) && p1point != p2point)
         {
-            score = getScore(p1point) + "-" + getScore(p2point);
+            score = formatScore();
         }
 
         if (p1point > p2point && p1point < 4 && p2point > 0)
         {
-            score = getScore(p1point) + "-" + getScore(p2point);
+            score = formatScore();
         }
         if (p2point > p1point && p2point < 4 && p1point > 0)
         {
-            score = getScore(p1point) + "-" + getScore(p2point);
+            score = formatScore();
         }
         
         if (p1point > p2point && p2point >= 3)
@@ -56,6 +56,10 @@ public class TennisGame2 implements TennisGame
             score = "Win for " + player2Name;
         }
         return score;
+    }
+
+    private String formatScore() {
+        return getScore(p1point) + "-" + getScore(p2point);
     }
 
     private String getScore(int point) {
