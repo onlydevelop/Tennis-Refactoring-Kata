@@ -25,18 +25,14 @@ public class TennisGame2 implements TennisGame
         
         if (p1point > 0 && p2point ==0)
         {
-            P1res = getScore(p1point);
-            P2res = "Love";
-            score = P1res + "-" + P2res;
+            score = getScore(p1point) + "-" + "Love";
         }
         if (p2point > 0 && p1point ==0)
         {
-            P2res = getScore(p2point);
-            P1res = "Love";
-            score = P1res + "-" + P2res;
+            score = "Love" + "-" + getScore(p2point);
         }
         
-        if (p1point > p2point && p1point < 4)
+        if (p1point > p2point && p1point < 4 && p2point > 0)
         {
             if (p1point ==2)
                 P1res="Thirty";
@@ -48,7 +44,7 @@ public class TennisGame2 implements TennisGame
                 P2res="Thirty";
             score = P1res + "-" + P2res;
         }
-        if (p2point > p1point && p2point < 4)
+        if (p2point > p1point && p2point < 4 && p1point > 0)
         {
             if (p2point ==2)
                 P2res="Thirty";
