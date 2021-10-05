@@ -19,11 +19,9 @@ public class TennisGame2 implements TennisGame
         String score = "";
         if (p1point == p2point)
         {
-
+            score = "Deuce";
             if (p1point < 3) {
                 score = getScore(p1point) + "-All";
-            } else {
-                score = "Deuce";
             }
         }
         if ((p1point == 0 || p2point == 0) && p1point != p2point && (p1point < 4 && p2point < 4))
