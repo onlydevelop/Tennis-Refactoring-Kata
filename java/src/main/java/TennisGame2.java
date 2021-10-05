@@ -8,6 +8,7 @@ public class TennisGame2 implements TennisGame
     public String P2res = "";
     private String player1Name;
     private String player2Name;
+    private final String[] scoreLabels = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
 
     public TennisGame2(String player1Name, String player2Name) {
         this.player1Name = player1Name;
@@ -23,7 +24,7 @@ public class TennisGame2 implements TennisGame
         if (p1point == p2point && p1point >=3)
             score = "Deuce";
         
-        if ((p1point == 0 || p2point == 0) && p1point != p2point)
+        if ((p1point == 0 || p2point == 0) && p1point != p2point && (p1point < 4 && p2point < 4))
         {
             score = formatScore();
         }
@@ -63,16 +64,7 @@ public class TennisGame2 implements TennisGame
     }
 
     private String getScore(int point) {
-        String score = "";
-        if (point == 0)
-            score = "Love";
-        if (point == 1)
-            score = "Fifteen";
-        if (point == 2)
-            score = "Thirty";
-        if (point == 3)
-            score = "Forty";
-        return score;
+        return scoreLabels[point];
     }
 
     public void wonPoint(String player) {
