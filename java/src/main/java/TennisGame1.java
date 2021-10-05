@@ -58,11 +58,9 @@ public class TennisGame1 implements TennisGame {
 
     private String getHighScore() {
         String score;
-        int minusResult = m_score1-m_score2;
-        if (minusResult==1) score ="Advantage " + player1Name;
-        else if (minusResult ==-1) score ="Advantage " + player2Name;
-        else if (minusResult>=2) score = "Win for " + player1Name;
-        else score ="Win for " + player2Name;
+        String resultPrefix = (Math.abs(m_score1 - m_score2) == 1) ? "Advantage " : "Win for ";
+        String selectedPlayer = (m_score1 > m_score2) ? player1Name : player2Name;
+        score = resultPrefix + selectedPlayer;
         return score;
     }
 
