@@ -18,8 +18,9 @@ public class TennisGame3 implements TennisGame {
         } else {
             if (player1Point == player2Point)
                 return "Deuce";
-            score = player1Point > player2Point ? player1Name : player2Name;
-            return ((player1Point - player2Point)*(player1Point - player2Point) == 1) ? "Advantage " + score : "Win for " + score;
+            String player = player1Point > player2Point ? player1Name : player2Name;
+            String prefix = Math.abs(player1Point - player2Point) == 1 ? "Advantage " : "Win for ";
+            return prefix + player;
         }
     }
 
@@ -35,6 +36,5 @@ public class TennisGame3 implements TennisGame {
             this.player1Point += 1;
         else
             this.player2Point += 1;
-        
     }
 }
