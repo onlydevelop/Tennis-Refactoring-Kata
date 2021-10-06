@@ -19,29 +19,16 @@ public class TennisGame2 implements TennisGame
         String score = "Deuce";
         if (p1point == p2point && p1point < 3) {
             score = getScore(p1point) + "-All";
-        }
-        if ((p1point == 0 || p2point == 0) && p1point != p2point && (p1point < 4 && p2point < 4))
-        {
+        } else if ((p1point == 0 || p2point == 0) && p1point != p2point && (p1point < 4 && p2point < 4)) {
             score = formatScore();
-        }
-
-        if (p1point > p2point && p1point < 4 && p2point > 0)
-        {
+        } else if (p1point > p2point && p1point < 4 && p2point > 0) {
             score = formatScore();
-        }
-        if (p2point > p1point && p2point < 4 && p1point > 0)
-        {
+        } else if (p2point > p1point && p2point < 4 && p1point > 0) {
             score = formatScore();
-        }
-        
-        if (p1point >= 3 && p2point >= 3 && p1point != p2point)
-        {
+        } else if (p1point >= 3 && p2point >= 3 && Math.abs(p1point - p2point) == 1 ) {
             String player = p1point > p2point ? player1Name : player2Name;
             score = "Advantage " + player;
-        }
-
-        if ((p1point >= 4 || p2point >= 4) && Math.abs(p1point - p2point) >= 2)
-        {
+        } else if ((p1point >= 4 || p2point >= 4) && Math.abs(p1point - p2point) >= 2) {
             String winner = p1point > p2point ? player1Name : player2Name;
             score = "Win for " + winner;
         }
