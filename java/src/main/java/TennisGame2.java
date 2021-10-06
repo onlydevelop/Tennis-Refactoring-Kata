@@ -44,15 +44,10 @@ public class TennisGame2 implements TennisGame
         }
 
 
-        if (p1point >= 4 || p2point >= 4)
+        if ((p1point >= 4 || p2point >= 4) && Math.abs(p1point - p2point) >= 2)
         {
-            if ((p1point - p2point) >= 2) {
-                score = "Win for " + player1Name;
-            }
-
-            if ((p2point - p1point) >= 2) {
-                score = "Win for " + player2Name;
-            }
+            String winner = p1point > p2point ? player1Name : player2Name;
+            score = "Win for " + winner;
         }
         return score;
     }
