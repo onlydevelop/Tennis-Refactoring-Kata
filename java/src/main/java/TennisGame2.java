@@ -22,10 +22,16 @@ public class TennisGame2 implements TennisGame
         } else if (p1point < 4 && p2point < 4) {
             score = formatScore();
         } else {
-            String player = p1point > p2point ? player1Name : player2Name;
-            String prefix = Math.abs(p1point - p2point) == 1 ? "Advantage " : "Win for ";
-            score = prefix + player;
+            score = formatRallyScore();
         }
+        return score;
+    }
+
+    private String formatRallyScore() {
+        String score;
+        String player = p1point > p2point ? player1Name : player2Name;
+        String prefix = Math.abs(p1point - p2point) == 1 ? "Advantage " : "Win for ";
+        score = prefix + player;
         return score;
     }
 
