@@ -1,6 +1,5 @@
 
 public class TennisGame3 implements TennisGame {
-    
     private int player1Point;
     private int player2Point;
     private String player1Name;
@@ -16,8 +15,7 @@ public class TennisGame3 implements TennisGame {
             return formatScore();
         } else if (player1Point != player2Point) {
             return formatAdvantageWinScore();
-        }
-        else {
+        } else {
             return "Deuce";
         }
     }
