@@ -12,15 +12,16 @@ public class TennisGame3 implements TennisGame {
     }
 
     public String getScore() {
-        String score;
         if (player1Point < 4 && player2Point < 4 && !(player1Point + player2Point == 6)) {
             return formatScore();
-        } else {
-            if (player1Point == player2Point)
-                return "Deuce";
+        } else if (player1Point != player2Point) {
             return formatAdvantageWinScore();
         }
+        else {
+            return "Deuce";
+        }
     }
+
     public void wonPoint(String playerName) {
         if (playerName == player1Name)
             this.player1Point += 1;
