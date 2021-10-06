@@ -27,11 +27,8 @@ public class TennisGame2 implements TennisGame
             score = formatScore();
         } else if (p1point >= 3 || p2point >= 3) {
             String player = p1point > p2point ? player1Name : player2Name;
-            if (Math.abs(p1point - p2point) == 1) {
-                score = "Advantage " + player;
-            } else {
-                score = "Win for " + player;
-            }
+            String prefix = Math.abs(p1point - p2point) == 1 ? "Advantage " : "Win for ";
+            score = prefix + player;
         }
         return score;
     }
