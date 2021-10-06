@@ -36,13 +36,9 @@ public class TennisGame2 implements TennisGame
         
         if (p1point >= 3 && p2point >= 3 && p1point != p2point)
         {
-            if (p1point > p2point) {
-                score = "Advantage " + player1Name;
-            } else {
-                score = "Advantage " + player2Name;
-            }
+            String player = p1point > p2point ? player1Name : player2Name;
+            score = "Advantage " + player;
         }
-
 
         if ((p1point >= 4 || p2point >= 4) && Math.abs(p1point - p2point) >= 2)
         {
