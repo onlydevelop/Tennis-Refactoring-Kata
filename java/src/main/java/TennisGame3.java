@@ -18,10 +18,20 @@ public class TennisGame3 implements TennisGame {
         } else {
             if (player1Point == player2Point)
                 return "Deuce";
-            String player = player1Point > player2Point ? player1Name : player2Name;
-            String prefix = Math.abs(player1Point - player2Point) == 1 ? "Advantage " : "Win for ";
-            return prefix + player;
+            return formatAdvantageWinScore();
         }
+    }
+    public void wonPoint(String playerName) {
+        if (playerName == player1Name)
+            this.player1Point += 1;
+        else
+            this.player2Point += 1;
+    }
+
+    private String formatAdvantageWinScore() {
+        String player = player1Point > player2Point ? player1Name : player2Name;
+        String prefix = Math.abs(player1Point - player2Point) == 1 ? "Advantage " : "Win for ";
+        return prefix + player;
     }
 
     private String formatScore() {
@@ -29,12 +39,5 @@ public class TennisGame3 implements TennisGame {
         String player1 = scoreLabel[player1Point];
         String player2 = (player1Point == player2Point) ? "All" : scoreLabel[player2Point];
         return player1 + "-" + player2;
-    }
-
-    public void wonPoint(String playerName) {
-        if (playerName == player1Name)
-            this.player1Point += 1;
-        else
-            this.player2Point += 1;
     }
 }
