@@ -14,10 +14,7 @@ public class TennisGame3 implements TennisGame {
     public String getScore() {
         String score;
         if (player1Point < 4 && player2Point < 4 && !(player1Point + player2Point == 6)) {
-            String[] scoreLabel = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
-            String player1 = scoreLabel[player1Point];
-            String player2 = (player1Point == player2Point) ? "All" : scoreLabel[player2Point];
-            return player1 + "-" + player2;
+            return formatScore();
         } else {
             if (player1Point == player2Point)
                 return "Deuce";
@@ -25,7 +22,14 @@ public class TennisGame3 implements TennisGame {
             return ((player1Point - player2Point)*(player1Point - player2Point) == 1) ? "Advantage " + score : "Win for " + score;
         }
     }
-    
+
+    private String formatScore() {
+        String[] scoreLabel = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
+        String player1 = scoreLabel[player1Point];
+        String player2 = (player1Point == player2Point) ? "All" : scoreLabel[player2Point];
+        return player1 + "-" + player2;
+    }
+
     public void wonPoint(String playerName) {
         if (playerName == player1Name)
             this.player1Point += 1;
