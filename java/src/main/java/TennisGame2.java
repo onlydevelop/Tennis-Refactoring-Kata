@@ -21,9 +21,7 @@ public class TennisGame2 implements TennisGame
             score = p1point < 3 ? getScore(p1point) + "-All" : "Deuce";
         } else if ((p1point == 0 || p2point == 0) && (p1point < 4 && p2point < 4)) {
             score = formatScore();
-        } else if (p1point > p2point && p1point < 4) {
-            score = formatScore();
-        } else if (p2point > p1point && p2point < 4) {
+        } else if (p1point < 4 && p2point < 4) {
             score = formatScore();
         } else {
             String player = p1point > p2point ? player1Name : player2Name;
